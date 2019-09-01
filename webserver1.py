@@ -25,6 +25,8 @@ while True:
     #sockfd, creates a new connected socket, and returns a new file
     #descriptor referring to that socket
     client_connection, client_address = listen_socket.accept()
+    #why recv is needed for sendall to work??, not needed
+    # comment next 2 lines and will still work
     request_data = client_connection.recv(1024)
     print(request_data.decode('utf-8'))
     
